@@ -1,6 +1,10 @@
-# Pepperoni Backend
+# KalJA - Kalasens Jättebra Anmälningssystem
 
-This is a sample Node.js backend for the Pepperoni app kit.
+Anmälningssystem för TF:s kalas.
+
+Frontend: https://github.com/noletreni/kalja-frontend
+
+Baserat på: https://github.com/FruitieX/backend-hipster-kit
 
 # Setup guide
 
@@ -16,7 +20,7 @@ Look up instructions for your specific OS/distribution.
 ## Initialize DB
 ```
 $ psql --user postgres
-  CREATE DATABASE pepperoni;
+  CREATE DATABASE kalja;
   <C-d>
 
 $ yarn db:migrate
@@ -66,4 +70,3 @@ Backend is now listening on port 3888 (or `$PORT` if set)
 ```
 $ yarn watch
 ```
-
