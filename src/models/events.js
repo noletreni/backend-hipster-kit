@@ -1,6 +1,6 @@
 import knex from '../utils/db';
 
-const eventSummaryFields = ['id', 'name', 'startDate'];
+const eventSummaryFields = ['id', 'name', 'startDate', 'description'];
 
 export const dbGetEvents = () => (
   knex('events')
