@@ -1,5 +1,7 @@
 # Pepperoni Backend
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/FruitieX/backend-hipster-kit.svg)](https://greenkeeper.io/)
+
 This is a sample Node.js backend for the Pepperoni app kit.
 
 # Setup guide
@@ -17,7 +19,7 @@ Look up instructions for your specific OS/distribution.
 ```
 $ psql --user postgres
   CREATE DATABASE pepperoni;
-  <C-d>
+  \q
 
 $ yarn db:migrate
 ```
@@ -36,7 +38,7 @@ $ yarn db:seed-dev
 ## Register admin user (production environments)
 ```
 # Get URL from e.g. Heroku dashboard
-$ DATABASE_URL=postgres://user:pass@hostname/dbname node register_admin.js
+$ DATABASE_URL=postgres://user:pass@hostname/dbname yarn register:admin
 ```
 
 ## Set secret used for generating JWT tokens (production environments)
@@ -49,6 +51,8 @@ In Heroku, you can:
 ```
 $ heroku config:set SECRET=[secret-string]
 ```
+
+You may also use [dotenv](https://www.npmjs.com/package/dotenv) files if you wish.
 
 Recommendation for generating `[secret-string]`:
 ```
@@ -66,4 +70,3 @@ Backend is now listening on port 3888 (or `$PORT` if set)
 ```
 $ yarn watch
 ```
-

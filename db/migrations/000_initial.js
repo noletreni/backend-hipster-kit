@@ -3,7 +3,7 @@ exports.up = knex => (
     .createTableIfNotExists('users', (table) => {
       table.increments('id').primary();
       table.timestamp('createdAt').defaultTo(knex.fn.now());
-      table.enu('scope', ['admin', 'user', 'participant']);
+      table.enu('scope', ['admin', 'user', 'participant']).notNullable();
       table.text('name').notNullable();
       table.text('email').notNullable().unique();
       table.text('password').notNullable();
