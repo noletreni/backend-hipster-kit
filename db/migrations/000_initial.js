@@ -24,8 +24,18 @@ exports.up = knex => (
     .createTableIfNotExists('registrations', (table) => {
       table.increments('id').primary();
       table.timestamp('createdAt').defaultTo(knex.fn.now());
-      table.integer('eventId').references('id').inTable('events').notNullable().onDelete('CASCADE');
-      table.integer('userId').references('id').inTable('users').notNullable().onDelete('CASCADE');
+      table
+        .integer('eventId')
+        .references('id')
+        .inTable('events')
+        .notNullable()
+        .onDelete('CASCADE');
+      table
+        .integer('userId')
+        .references('id')
+        .inTable('users')
+        .notNullable()
+        .onDelete('CASCADE');
       table.json('extraAnswers');
     })
 );
