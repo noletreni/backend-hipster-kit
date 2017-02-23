@@ -1,8 +1,10 @@
-# Pepperoni Backend
+# KalJA - Kalasens Jättebra Anmälningssystem
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/FruitieX/backend-hipster-kit.svg)](https://greenkeeper.io/)
+Anmälningssystem för TF:s kalas.
 
-This is a sample Node.js backend for the Pepperoni app kit.
+Frontend: https://github.com/noletreni/kalja-frontend
+
+Baserat på: https://github.com/FruitieX/backend-hipster-kit
 
 # Setup guide
 
@@ -18,8 +20,8 @@ Look up instructions for your specific OS/distribution.
 ## Initialize DB
 ```
 $ psql --user postgres
-  CREATE DATABASE pepperoni;
-  \q
+  CREATE DATABASE kalja;
+  <C-d>
 
 $ yarn db:migrate
 ```
