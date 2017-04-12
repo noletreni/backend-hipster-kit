@@ -6,69 +6,26 @@ Frontend: https://github.com/noletreni/kalja-frontend
 
 Baserat på: https://github.com/FruitieX/backend-hipster-kit
 
-# Setup guide
+## Documentation
 
-## Install project dependencies
-```
-$ yarn
-```
+- [Setup](/docs/SETUP.md)
+- [Deployment](/docs/DEPLOYMENT.md)
+- [Architecture](/docs/ARCHITECTURE.md)
+- [TODO](/docs/TODO.md)
 
-## Install PostgreSQL
+## Tech stack
 
-Look up instructions for your specific OS/distribution.
+This is a sample Node.js backend to get you started with the following stack quickly:
 
-## Initialize DB
-```
-$ psql --user postgres
-  CREATE DATABASE kalja;
-  <C-d>
+* [hapi.js](https://hapijs.com/), a server framework for Node.js
+* [knex](http://knexjs.org/), SQL query builder
 
-$ yarn db:migrate
-```
+### Misc
 
-## Insert seed data
-```
-# Run either of these
+* [lodash](https://lodash.com/), various useful JavaScript utils
 
-# Production environment
-$ yarn db:seed
+### Tools
 
-# Development environment, additionally inserts admin account with credentials: foo@bar.com:foobar
-$ yarn db:seed-dev
-```
-
-## Register admin user (production environments)
-```
-# Get URL from e.g. Heroku dashboard
-$ DATABASE_URL=postgres://user:pass@hostname/dbname yarn register:admin
-```
-
-## Set secret used for generating JWT tokens (production environments)
-```
-# Backend will refuse to run if NODE_ENV=production and this is not set:
-$ export SECRET=[secret-string]
-```
-
-In Heroku, you can:
-```
-$ heroku config:set SECRET=[secret-string]
-```
-
-You may also use [dotenv](https://www.npmjs.com/package/dotenv) files if you wish.
-
-Recommendation for generating `[secret-string]`:
-```
-$ node -e "console.log(require('crypto').randomBytes(256).toString('base64'));"
-```
-
-## Run backend
-```
-$ yarn start
-```
-
-Backend is now listening on port 3888 (or `$PORT` if set)
-
-## Run backend in development, watching for changes
-```
-$ yarn watch
-```
+* [babel](https://babeljs.io/), transpile ES6 syntax into ES5
+* [eslint](http://eslint.org/), make sure your code is remotely sane, using [Airbnb's JS style guide](https://github.com/airbnb/javascript)
+* [jest](https://facebook.github.io/jest/), painless JavaScript testing
