@@ -9,8 +9,9 @@ export const dbGetEvents = () => (
 
 export const dbGetEvent = id => (
   knex('events')
-    .first('*')
-    .where({ id })
+    .first('events.*', 'users.name AS ownerName')
+    .where({ 'events.id': id })
+    .leftJoin('users', 'ownerId', 'users.id')
 );
 
 export const dbCreateEvent = (ownerId, fields) => (
