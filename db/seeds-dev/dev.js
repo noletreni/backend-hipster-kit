@@ -16,6 +16,26 @@ fixtureFactory.register('event', {
   ownerId: 1,
   startDate: 'date.future',
   description: 'lorem.sentences',
+  extraFields: JSON.stringify([{
+    type: 'radiobutton',
+    question: 'Alkohol?',
+    options: ['Ja', 'Nej'],
+    required: true,
+  }, {
+    type: 'checkbox',
+    question: 'Allergier',
+    options: ['Glutenfri', 'Vegetarian', 'Vegan'],
+    required: true,
+  }, {
+    type: 'text',
+    question: 'Valfri hälsning',
+    required: true,
+  }, {
+    type: 'dropdown',
+    question: 'Välj förening/gille',
+    options: ['TF', 'TiK', 'AS', 'KIK'],
+    required: true,
+  }]),
 });
 
 // Generate one test admin user
