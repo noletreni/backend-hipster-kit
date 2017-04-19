@@ -36,6 +36,7 @@ exports.up = knex => (
         .inTable('users')
         .notNullable()
         .onDelete('CASCADE');
+      table.unique(['eventId', 'userId']);
       table.json('extraAnswers');
     })
 );

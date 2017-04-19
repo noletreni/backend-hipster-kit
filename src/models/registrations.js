@@ -7,7 +7,7 @@ export const dbGetRegistrations = () => (
     .select(registrationSummaryFields)
 );
 
-export const dbCreateRegistrations = (userId, fields) => (
+export const dbCreateRegistration = (userId, fields) => (
   knex('registrations')
     .insert({ ...fields, userId })
     .returning('*')
